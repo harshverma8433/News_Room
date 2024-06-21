@@ -6,8 +6,8 @@
     const app = express()
 
     app.use(cors({
-        // origin: 'https://news-room-coral.vercel.app',
-        origin: 'http://localhost:3000',
+        origin: 'https://news-room-coral.vercel.app',
+        // origin: 'http://localhost:3000',
         credentials: true
     }));
 
