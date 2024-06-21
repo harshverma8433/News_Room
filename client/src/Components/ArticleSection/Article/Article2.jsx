@@ -18,10 +18,7 @@ const Article2 = ({ hamburger, article }) => {
     try {
       const url = `${process.env.REACT_APP_API_URL}/isAuthorized`;
             const token = localStorage.getItem('jwt');
-      if (!token) {
-        console.log("No token found.");
-        return;
-      }
+      
       const isAuth = await axios.get(url, {  headers: {
         Authorization: `${token}`, 
       }, });
@@ -42,10 +39,7 @@ const Article2 = ({ hamburger, article }) => {
   const deleteArticle = async (id) => {
     try {
       const token = localStorage.getItem('jwt'); // Get token from local storage
-      if (!token) {
-        console.log("No token found.");
-        return;
-      }
+      
 
       const url = `${process.env.REACT_APP_API_URL}/deleteArticle/${id}`;
       const response = await axios.delete(url, { headers: {
@@ -66,10 +60,7 @@ const Article2 = ({ hamburger, article }) => {
   const editArticle = async (id) => {
     try {
       const token = localStorage.getItem('jwt'); // Get token from local storage
-      if (!token) {
-        console.log("No token found.");
-        return;
-      }
+      
 
       const url = `${process.env.REACT_APP_API_URL}/isAuthorized`;
       const isAuth = await axios.get(url, { headers: {

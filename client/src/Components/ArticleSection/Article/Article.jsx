@@ -17,10 +17,7 @@ const Article = ({ hamburger, article }) => {
         try {
             const url = `${process.env.REACT_APP_API_URL}/isAuthorized`;
             const token = localStorage.getItem('jwt'); // Get token from local storage
-      if (!token) {
-        console.log("No token found.");
-        return;
-      }
+      
             const isAuth = await axios.get(url, {
                 headers: {
                     Authorization: `${token}`, // Set the Authorization header

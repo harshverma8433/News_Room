@@ -15,10 +15,7 @@ const ArticleDetails = ({ handleopenAccount }) => {
     const fetchArticleDetails = async () => {
       try {
             const token = localStorage.getItem('jwt'); // Get token from local storage
-      if (!token) {
-        console.log("No token found.");
-        return;
-      }
+      
         const url = `${process.env.REACT_APP_API_URL}/getArticle/${id}`;
         const response = await axios.get(url, { headers: {
           Authorization: `${token}`, // Set the Authorization header
@@ -46,10 +43,7 @@ const ArticleDetails = ({ handleopenAccount }) => {
     try {
       const uri = `${process.env.REACT_APP_API_URL}/likeArticle/${id}`;
       const token = localStorage.getItem('jwt'); // Get token from local storage
-      if (!token) {
-        console.log("No token found.");
-        return;
-      }
+      
 
       const response = await axios.post(uri, {}, { headers: {
               Authorization: `${token}`, // Set the Authorization header

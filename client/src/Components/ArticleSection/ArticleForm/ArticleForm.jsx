@@ -62,10 +62,7 @@ const ArticleForm = () => {
     try {
       const uri = `${process.env.REACT_APP_API_URL}/addArticle`;
       const token = localStorage.getItem('jwt'); 
-      if (!token) {
-        console.log("No token found.");
-        return;
-      }
+      
       const response = await axios.post(uri, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',

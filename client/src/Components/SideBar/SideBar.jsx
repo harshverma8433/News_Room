@@ -21,10 +21,7 @@ const SideBar = ({ setHamburger }) => {
   useEffect(() => {
     const fetchUser = async () => {
       const token = localStorage.getItem('jwt'); // Get token from local storage
-      if (!token) {
-        console.log("No token found.");
-        return;
-      }
+      
 
       try {
         const url = `${process.env.REACT_APP_API_URL}/user`;

@@ -23,10 +23,7 @@ const UpdateArticleForm = () => {
             try {
                 const uri = `${process.env.REACT_APP_API_URL}/getArticle/${id}`;
                 const token = localStorage.getItem('jwt'); // Get token from local storage
-      if (!token) {
-        console.log("No token found.");
-        return;
-      }
+      
 
                 const response = await axios.get(uri, {
                     headers: {
@@ -94,10 +91,7 @@ const UpdateArticleForm = () => {
         try{
             const uri = `${process.env.REACT_APP_API_URL}/updateArticle/${id}`;
             const token = localStorage.getItem('jwt'); // Get token from local storage
-      if (!token) {
-        console.log("No token found.");
-        return;
-      }
+      
             const response = await axios.put(uri , formdata , {
                 withCredentials:true,
                 headers:{
