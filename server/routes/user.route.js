@@ -1,6 +1,6 @@
 const express = require("express");
 const multer = require("multer")
-const upload = require("../middlewares/multer.middleware.js"); 
+const upload = multer();
 const uploadOnCloudinary = require("../utils/cloudinary.js");
 const bcrypt = require("bcrypt");
 const router = express.Router();
