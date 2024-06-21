@@ -13,7 +13,7 @@ router.post('/addArticle' , AuthMiddleware ,upload.single("image") , async (req,
     try{
         
         
-        const imageurl = await uploadOnCloudinary(req.file.path);
+        const imageurl = await uploadOnCloudinary(req.file.buffer);
 
         const article = new Article({
             title:req.body.title,
