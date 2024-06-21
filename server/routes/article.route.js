@@ -93,7 +93,7 @@ router.put('/updateArticle/:id' , AuthMiddleware , upload.single("image")  , asy
 
         let imageurl = article.image;
         if(req.file){
-            imageurl = await uploadOnCloudinary(req.file.path);
+            imageurl = await uploadOnCloudinary(req.file.buffer);
         }
 
         await Article.findByIdAndUpdate(id , {

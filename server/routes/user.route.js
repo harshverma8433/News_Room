@@ -19,8 +19,7 @@ router.get('/isAuthorized' , AuthMiddleware , async (req,res) => {
 });
 
 router.post("/register", upload.single("image"), async (req, res) => {
-  console.log("ssdrf");
-  console.log("dddf" , req.file);
+  
   try {
 
     if (!req.file) {
@@ -129,7 +128,7 @@ router.post("/updateuser/:id",upload.single("image"), async (req, res) => {
     
     let  imageurl = user.image;
     if(req.file){
-      imageurl = await uploadOnCloudinary(req.file.path);
+      imageurl = await uploadOnCloudinary(req.file.buffer);
     }
     await User.findByIdAndUpdate(req.params.id , {
       $set: {
