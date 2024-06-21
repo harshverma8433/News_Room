@@ -19,6 +19,8 @@ router.get('/isAuthorized' , AuthMiddleware , async (req,res) => {
 });
 
 router.post("/register", upload.single("image"), async (req, res) => {
+  console.log("ssdrf");
+  console.log("dddf" , req.file);
   try {
 
     if (!req.file) {
@@ -31,10 +33,11 @@ router.post("/register", upload.single("image"), async (req, res) => {
     if (existingUser) {
       return res.status(203).json({ message: "User already registered" });
     }
+
     
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const imageUrl = await uploadOnCloudinary(req.file.path);
+    const imageUrl = await uploadOnCloudinary(req.file.buffer);
     if (!imageUrl) {
       return res.status(201).json({ message: "Image upload failed" });
     }
