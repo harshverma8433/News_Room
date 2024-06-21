@@ -6,7 +6,7 @@
     const app = express()
 
     app.use(cors({
-        origin: 'https://news-room-coral.vercel.app',
+        origin: 'https://6675929c8132609a07471d7b--thunderous-cranachan-79ca4f.netlify.app',
 
         // origin: 'http://localhost:3000',
         credentials: true
