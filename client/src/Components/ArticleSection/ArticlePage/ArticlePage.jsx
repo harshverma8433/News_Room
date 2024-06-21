@@ -46,10 +46,7 @@ const ArticlePage = ({ hamburger, myArticle }) => {
     
       try {
         const token = localStorage.getItem('jwt');
-        if (!token) {
-          console.log("No token found.");
-          return;
-        }
+        
         const response = await axios.get(url, {
           headers: {
             'Content-Type': 'application/json',

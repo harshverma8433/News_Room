@@ -35,7 +35,6 @@ router.post('/addArticle' , AuthMiddleware ,upload.single("image") , async (req,
 
 router.get("/getArticles" , async (req,res)=>{
     
-    console.log("rf4fr");
     try{
         
         const articles = await Article.find();
